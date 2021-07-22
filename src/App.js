@@ -174,8 +174,8 @@ const App = () => {
               </TableCell>
               <TableCell align="right">{row.first}</TableCell>
               <TableCell align="right">{row.last}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right">{row.phone}</TableCell>
+              <TableCell align="right"><a href={`mailto:${row.email}`}>{row.email}</a></TableCell>
+              <TableCell align="right"><a href={`tel:+1${row.phone.split("-").join("")}`}>{row.phone}</a></TableCell>
               <TableCell align="center"><h2 className="text-danger clickable"><RiMailDownloadFill onClick={() => {CreateVCard(row.id)}} /></h2></TableCell>
             </TableRow>
           ))}
